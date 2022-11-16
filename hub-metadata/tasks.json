@@ -1,0 +1,17 @@
+{
+    "rounds": [
+        {
+            "round_id": "",
+            "model_tasks": [
+                {
+                    "task_ids": {},
+                    "output_types": {}
+                }
+            ],
+            "submissions_due": {
+                "start": "",
+                "end": ""
+            }
+        }
+    ]
+}
