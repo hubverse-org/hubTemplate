@@ -2,6 +2,7 @@
     "rounds": [
         {
             "round_id": "",
+            "round_id_from_variable: false,
             "model_tasks": [
                 {
                     "task_ids": {},
