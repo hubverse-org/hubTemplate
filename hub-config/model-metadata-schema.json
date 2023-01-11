@@ -72,14 +72,13 @@
             "description": "License for use of model output data",
             "type": "string",
             "enum": [
-                "apache-2.0",
-                "cc-by-4.0",
-                "cc-by-nc-4.0",
-                "cc-by-nc-nd-4.0",
-                "cc-by-sa-4.0",
-                "gpl-3.0",
-                "lgpl-3.0",
-                "mit"
+                "CC0-1.0",
+                "CC-BY-4.0",
+                "CC-BY_SA-4.0",
+                "PPDL",
+                "ODC-by",
+                "ODbL",
+                "OGL-3.0"
             ]
         },
         "include_viz": {
