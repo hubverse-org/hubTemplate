@@ -1,0 +1,20 @@
+{
+    "schema_version": "https://raw.githubusercontent.com/Infectious-Disease-Modeling-Hubs/schemas/main/v1.0.0/tasks-schema.json",
+    "rounds": [
+        {
+            "round_id_from_variable": true,
+            "round_id": "task_id_variable_that_defines_a_round",
+            "model_tasks": [
+                {
+                    "task_ids": {},
+                    "output_type": {},
+                    "target_metadata":[]
+                }
+            ],
+            "submissions_due": {
+                "start": "",
+                "end": ""
+            }
+        }
+    ]
+}
