@@ -81,18 +81,6 @@
                 "OGL-3.0"
             ]
         },
-        "include_viz": {
-            "description": "Indicator for whether the model should be included in the Hub’s visualization",
-            "type": "boolean"
-        },
-        "include_ensemble": {
-            "description": "Indicator for whether the model should be included in the Hub’s ensemble",
-            "type": "boolean"
-        },
-        "include_eval": {
-            "description": "Indicator for whether the model should be scored for inclusion in the Hub’s evaluations",
-            "type": "boolean"
-        },
         "citation": {
             "description": "One or more citations for this model",
             "type": "string",
