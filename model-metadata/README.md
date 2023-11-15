@@ -1,11 +1,13 @@
 # Model metadata
-<mark style="background-color: #FFE331">**This README.md is slightly modified from  [Flusight-Forecast_Hub model-metadata README](https://github.com/cdcepi/FluSight-forecast-hub/blob/master/model-metadata/README.md).  Be sure to modify the text below to reflect your hub.**</mark>
 
-This folder contains metadata files for the models submitting to the FluSight forecasting collaboration. The specification for these files has been adapted to be consistent with [model metadata guidelines in the hubverse documentation](https://hubdocs.readthedocs.io/en/latest/user-guide/model-metadata.html).
+
+<mark style="background-color: #FFE331">**Below is a template of the README.md file for the model-metadata folder of your hub. Italics in brackets are placeholders for information about your hub. **</mark>
+
+
+This folder contains metadata files for the models submitting to the  *[hub name]*. The specification for these files has been adapted to be consistent with [model metadata guidelines in the hubverse documentation](https://hubdocs.readthedocs.io/en/latest/user-guide/model-metadata.html).
 
 Each model is required to have metadata in 
-[yaml format](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html), 
-e.g. [see this metadata file](./UMass-trends_ensemble.yml).
+[yaml format](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html).
 
 These instructions provide detail about the [data
 format](#Data-format) as well as [validation](#Data-validation) that
@@ -113,7 +115,7 @@ Any information about funding source(s) for the team or members of the team that
 
 Optionally, you may validate a model metadata file locally before submitting it to the hub in a pull request. Note that this is not required, since the validations will also run on the pull request. To run the validations locally, follow these steps:
 
-1. Create a fork of the `FluSight-forecast-hub` repository and then clone the fork to your computer.
+1. Create a fork of the `*[insert hub name]*` repository and then clone the fork to your computer.
 2. Create a draft of the model metadata file for your model and place it in the `model-metadata` folder of this clone.
 3. Install the hubValidations package for R by running the following command from within an R session:
 ``` r
@@ -142,3 +144,5 @@ If all is well, you should see output similar to the following:
 ```
 
 If there are any errors, you will see a message describing the problem.
+
+<mark style="background-color: #FFE331">**As an example, here is a link to the [Flusight-Forecast_Hub model-metadata README](https://github.com/cdcepi/FluSight-forecast-hub/blob/master/model-metadata/README.md).**</mark>
