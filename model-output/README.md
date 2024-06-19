@@ -13,7 +13,7 @@ a pull request so that automatic data validation checks are run.
 These instructions provide detail about the [data
 format](#Data-formatting) as well as [validation](#Forecast-validation) that
 you can do prior to this pull request. In addition, we describe
-[metadata](https://github.com/Infectious-Disease-Modeling-Hubs/hubTemplate/blob/master/model-metadata/README.md)
+[metadata](https://github.com/hubverse-org/hubTemplate/blob/master/model-metadata/README.md)
 that each model should provide in the model-metadata folder.
 
 *Table of Contents*
@@ -84,7 +84,7 @@ The metadata file will be saved within the model-metdata directory in the Hub's 
 
       team-model.yml
 
-Details on the content and formatting of metadata files are provided in the [model-metadata README](https://github.com/Infectious-Disease-Modeling-Hubs/hubTemplate/blob/master/model-metadata/README.md).
+Details on the content and formatting of metadata files are provided in the [model-metadata README](https://github.com/hubverse-org/hubTemplate/blob/master/model-metadata/README.md).
 
 
 
@@ -220,7 +220,7 @@ To ensure proper data formatting, pull requests for new data in
 When a pull request is submitted, the data are validated through [Github
 Actions](https://docs.github.com/en/actions) which runs the tests
 present in [the hubValidations
-package](https://github.com/Infectious-Disease-Modeling-Hubs/hubValidations). The
+package](https://github.com/hubverse-org/hubValidations). The
 intent for these tests are to validate the requirements above. Please
 [let us know]( *[Insert url to your hub's issues]*) if you are facing issues while running the tests.
 
