@@ -21,7 +21,7 @@ There are standard software packages to convert from dates to epidemic weeks and
 If you have questions aboutthis target, please reach out to *[insert name]*  (*[insert email]* ). 
 
 ## Acknowledgments
-This repository follows the guidelines and standards outlined by the [hubverse]([url](https://hubdocs.readthedocs.io/en/latest/)), which provides a set of data formats and open source tools for modeling hubs.
+This repository follows the guidelines and standards outlined by the [hubverse]([url](https://hubverse.io/en/latest/)), which provides a set of data formats and open source tools for modeling hubs.
 
 
 <mark style="background-color: #FFE331">**As an example, here is the link to [Flusight-Forecast_Hub  README](https://github.com/cdcepi/FluSight-forecast-hub/blob/master/README.md).  **</mark>
