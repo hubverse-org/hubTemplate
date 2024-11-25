@@ -1,5 +1,5 @@
 {
-    "schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v3.0.1/tasks-schema.json",
+    "schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v4.0.0/tasks-schema.json",
     "rounds": [
         {
             "round_id_from_variable": true,
@@ -22,5 +22,6 @@
             }
         }
     ],
-    "output_type_id_datatype": "auto"
+    "output_type_id_datatype": "auto",
+    "derived_task_ids": null
 }
