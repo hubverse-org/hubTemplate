@@ -1,4 +1,10 @@
-<mark style="background-color: #FFE331">**Below is a template of the README.md file for your hub. Italics in brackets are placeholders for information about your hub.**</mark>
+> [!NOTE]
+> To use this README.md in your hub, replace the placeholders (italics in
+> brackets) with information about your hub.
+> Below are a few example of READMEs throughout the Hubverse:
+>
+> - [FluSight Forecast Hub](https://github.com/cdcepi/FluSight-forecast-hub/blob/main/README.md)
+> - [US SARS-CoV-2 Variant Nowcast Hub](https://github.com/reichlab/variant-nowcast-hub)
 
 # *[Insert title of hub]*
 
