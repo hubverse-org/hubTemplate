@@ -93,10 +93,11 @@ To install hubData and its dependencies (including the dplyr and arrow packages)
 
 ### Using hubData
 
-hubData's [`connect_hub` function](https://hubverse-org.github.io/hubData/reference/connect_hub.html) returns an Arrow
-[multi-file dataset](https://arrow.apache.org/docs/r/reference/Dataset.html) that represents a hub's model output data.
+hubData's [`connect_hub()` function](https://hubverse-org.github.io/hubData/reference/connect_hub.html) returns an [Arrow
+multi-file dataset](https://arrow.apache.org/docs/r/reference/Dataset.html) that represents a hub's model output data.
 The dataset can be filtered and transformed using dplyr and then materialized into a local data frame
-using [`collect_hub`](https://hubverse-org.github.io/hubData/reference/collect_hub.html).
+using the [`collect_hub()` function](https://hubverse-org.github.io/hubData/reference/collect_hub.html).
+
 
 #### Accessing target data
 
