@@ -111,10 +111,11 @@ library(dplyr)
 library(hubData)
 
 hub_bucket <- s3_bucket([hub-bucket-name])
-hub_con <- hubData::connect_hub(hub_bucket, file_format="parquet", skip_checks=TRUE)
+hub_con <- hubData::connect_hub(hub_bucket, file_format = "parquet", skip_checks = TRUE)
 hub_con %>%
-  dplyr::filter(location=="MA", output_type=="quantile") %>%
+  dplyr::filter(location == "MA", output_type == "quantile") %>%
   hubData::collect_hub()
+
 ```
 
 - [full hubData documentation](https://hubverse-org.github.io/hubData/)
