@@ -155,7 +155,7 @@ pip install polars
 ### Using Polars
 
 The examples below use the Polars
-[`scan_parquet`](https://docs.pola.rs/api/python/dev/reference/api/polars.scan_parquet.html) function, which returns a
+[`scan_parquet()` function](https://docs.pola.rs/api/python/dev/reference/api/polars.scan_parquet.html), which returns a
 [LazyFrame](https://docs.pola.rs/api/python/stable/reference/lazyframe/index.html).
 LazyFrames do not perform computations until necessary, so any filtering and transforms you apply to the data are
 deferred until an explicit
