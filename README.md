@@ -111,7 +111,8 @@ Below is an example of using hubData to connect to a hub on S3 and filter the mo
 library(dplyr)
 library(hubData)
 
-hub_bucket <- s3_bucket([hub-bucket-name])
+bucket_name <- "hub-bucket-name"
+hub_bucket <- s3_bucket(bucket_name)
 hub_con <- hubData::connect_hub(hub_bucket, file_format = "parquet", skip_checks = TRUE)
 hub_con %>%
   dplyr::filter(location == "MA", output_type == "quantile") %>%
