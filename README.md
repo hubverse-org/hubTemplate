@@ -89,7 +89,7 @@ hubData is a good choice if you:
 
 ### Installing hubData
 
-To install hubData, follow the [instructions in its documentation](https://hubverse-org.github.io/hubData/#installation).
+To install hubData and its dependencies (including the dplyr and arrow packages), follow the [instructions in the hubData documentation](https://hubverse-org.github.io/hubData/#installation).
 
 ### Using hubData
 
