@@ -180,9 +180,27 @@ oracle_dataframe = oracle_data.filter(pl.col("location") == "MA").collect()
 
 #### Accessing model output data
 
-Get the model-output files for a specific team (all rounds).
+Get all model-output files.
 This example uses
 [glob patterns to read from data multiple files into a single dataset](https://docs.pola.rs/user-guide/io/multiple/#reading-into-a-single-dataframe).
+It also uses the [`streaming` option](https://docs.pola.rs/user-guide/concepts/_streaming/) when collecting data, which
+facilitates processing of datasets that don't fit into memory.
+
+```python
+import polars as pl
+
+# create a LazyFrame for model-output files
+lf = pl.scan_parquet(
+    "s3://[hub-bucket-name]/model-output/*/*.parquet",
+    storage_options={"skip_signature": "true"}
+)
+
+# use a collect operation to materialize the LazyFrame into a DataFrame
+model_output = lf.collect(streaming=True)
+```
+
+Get the model-output files for a specific team (all rounds).
+Like the prior example, this one uses glob patterns to read multiple files.
 
 ```python
 import polars as pl
