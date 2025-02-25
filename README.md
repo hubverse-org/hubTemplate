@@ -149,7 +149,7 @@ Polars is a good choice if you:
 Use pip to install Polars:
 
 ```sh
-pip install polars
+python -m pip install polars
 ```
 
 ### Using Polars
