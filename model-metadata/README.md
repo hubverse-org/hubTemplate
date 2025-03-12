@@ -86,7 +86,7 @@ A boolean value (`true` or `false`) that indicates whether a model is an ensembl
 
 ### ensemble_of_hub_models
 
-A boolean value (`true` or `false`) that indicates whether a model is an ensemble specifically of other models submited to the FluSight forecasting hub.
+A boolean value (`true` or `false`) that indicates whether a model is an ensemble specifically of other models submitted to the forecasting hub.
 
 ## Optional
 
@@ -109,7 +109,7 @@ One or more citations to manuscripts or preprints with additional model details.
 
 ### team_funding 
 
-Any information about funding source(s) for the team or members of the team that would be natural to include on any resulting FluSight publications. For example, "National Institutes of General Medical Sciences (R01GM123456). The content is solely the responsibility of the authors and does not necessarily represent the official views of NIGMS."
+Any information about funding source(s) for the team or members of the team that would be natural to include on any resulting publications. For example, "National Institutes of General Medical Sciences (R01GM123456). The content is solely the responsibility of the authors and does not necessarily represent the official views of NIGMS."
 
 # Data validation
 
