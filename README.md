@@ -98,7 +98,6 @@ multi-file dataset](https://arrow.apache.org/docs/r/reference/Dataset.html) that
 The dataset can be filtered and transformed using dplyr and then materialized into a local data frame
 using the [`collect_hub()` function](https://hubverse-org.github.io/hubData/reference/collect_hub.html).
 
-
 #### Accessing target data
 
 *[hubData will be updated to access target data once the Hubverse target data standards are finalized.]*
@@ -150,7 +149,7 @@ Polars is a good choice if you:
 Use pip to install Polars:
 
 ```sh
-pip install polars
+python -m pip install polars
 ```
 
 ### Using Polars
@@ -181,9 +180,27 @@ oracle_dataframe = oracle_data.filter(pl.col("location") == "MA").collect()
 
 #### Accessing model output data
 
-Get the model-output files for a specific team (all rounds).
+Get all model-output files.
 This example uses
 [glob patterns to read from data multiple files into a single dataset](https://docs.pola.rs/user-guide/io/multiple/#reading-into-a-single-dataframe).
+It also uses the [`streaming` option](https://docs.pola.rs/user-guide/concepts/_streaming/) when collecting data, which
+facilitates processing of datasets that don't fit into memory.
+
+```python
+import polars as pl
+
+# create a LazyFrame for model-output files
+lf = pl.scan_parquet(
+    "s3://[hub-bucket-name]/model-output/*/*.parquet",
+    storage_options={"skip_signature": "true"}
+)
+
+# use a collect operation to materialize the LazyFrame into a DataFrame
+model_output = lf.collect(streaming=True)
+```
+
+Get the model-output files for a specific team (all rounds).
+Like the prior example, this one uses glob patterns to read multiple files.
 
 ```python
 import polars as pl
@@ -262,7 +279,7 @@ aws s3 cp s3://[hub-bucket-name]/target-data/ . --recursive --no-sign-request
 Download the model-output files for a specific team:
 
 ```sh
-aws s3 cp s3://[hub-bucket-name]/[modeling-team-name]/UMass-flusion/ . --recursive --no-sign-request
+aws s3 cp s3://[hub-bucket-name]/model-output/[modeling-team-name]/ . --recursive --no-sign-request
 ```
 
 - [Full documentation for `aws s3 ls`](https://docs.aws.amazon.com/cli/latest/reference/s3/ls.html)
