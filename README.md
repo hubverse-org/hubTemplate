@@ -272,5 +272,4 @@ aws s3 cp s3://[hub-bucket-name]/[modeling-team-name]/UMass-flusion/ . --recursi
 
 ## Acknowledgments
 
-This repository follows the guidelines and standards outlined by [the
-[hubverse](https://hubverse.io), which provides a set of data formats and open source tools for modeling hubs.
+This repository follows the guidelines and standards outlined by the [hubverse](https://hubverse.io), which provides a set of data formats and open source tools for modeling hubs.
