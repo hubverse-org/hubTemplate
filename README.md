@@ -61,11 +61,11 @@ cloning the entire hub to your local machine.
 The sections below provide examples for accessing hub data on the cloud, depending on your goals and
 preferred tools. The options include:
 
-| Access Method              | Description                                                                           |
-| -------------------------- | ------------------------------------------------------------------------------------- |
-| hubData (R)                | Hubverse R client and R code for accessing hub data                                   |
-| Polars (Python)            | Python open-source library for data manipulation                                      |
-| AWS command line interface | Download hub data to your machine and use hubData or Polars for local access          |
+| Access Method              | Description                                                                  |
+|----------------------------|------------------------------------------------------------------------------|
+| hubData (R)                | Hubverse R client and R code for accessing hub data                          |
+| hub-data (Python)          | Python package for working with hubverse data                                |
+| AWS command line interface | Download hub data to your machine and use hubData or Polars for local access |
 
 In general, accessing the data directly from S3 (instead of downloading it first) is more convenient. However, if
 performance is critical (for example, you're building an interactive visualization), or if you need to work offline,
@@ -124,93 +124,26 @@ hub_con %>%
 
 </details>
 
-<!--------------------------------------------------- Polars ------------------------------------------------------->
+<!--------------------------------------------------- hub-data ------------------------------------------------------->
 
 <details>
 
-<summary>Polars (Python)</summary>
+<summary>hub-data (Python)</summary>
 
-The Hubverse team is currently developing a Python client (hubDataPy). Until hubDataPy is ready,
-the [Polars](https://pola.rs/) library is a good option for working with hub data in S3.
-Similar to pandas, Polars is based on dataframes and series. However, Polars has a more straightforward API and is
-designed to work with larger-than-memory datasets.
+The Hubverse team is developing a Python client which provides some initial tools for accessing Hubverse data. The repository is located at https://github.com/hubverse-org/hub-data .
 
-Pandas users can access hub data as described below and then use the `to_pandas()` method to convert a Polars dataframe
-to pandas format.
 
-Polars is a good choice if you:
+### Installing hub-data
 
-- already use Python for data analysis
-- want to interactively explore hub data from the cloud without downloading it
-- want to save a subset of the hub's data (*e.g.*, forecasts for a specific date or target) to your local machine
-- want to save hub data in a different file format (*e.g.*, parquet to .csv)
-
-### Installing polars
-
-Use pip to install Polars:
+Use pip to install hub-data (the pypi package is https://pypi.org/project/hubdata ):
 
 ```sh
-pip install polars
+pip install hubdata
 ```
 
-### Using Polars
+### Using hub-data
 
-The examples below use the Polars
-[`scan_parquet()` function](https://docs.pola.rs/api/python/dev/reference/api/polars.scan_parquet.html), which returns a
-[LazyFrame](https://docs.pola.rs/api/python/stable/reference/lazyframe/index.html).
-LazyFrames do not perform computations until necessary, so any filtering and transforms you apply to the data are
-deferred until an explicit
-[`collect()` operation](https://docs.pola.rs/api/python/stable/reference/lazyframe/api/polars.LazyFrame.collect.html#polars.LazyFrame.collect).
-
-#### Accessing target data
-
-Get all oracle-output files into a single DataFrame.
-
-```python
-import polars as pl
-
-oracle_data = pl.scan_parquet(
-    # the structure of the s3 link below will depend on how your hub organizes target data
-    "s3://[hub-bucket-name]/target-data/oracle-output/*/*.parquet",
-    storage_options={"skip_signature": "true"}
-)
-
-# filter and transform as needed and collect into a dataframe, for example:
-oracle_dataframe = oracle_data.filter(pl.col("location") == "MA").collect()
-```
-
-#### Accessing model output data
-
-Get the model-output files for a specific team (all rounds).
-This example uses
-[glob patterns to read from data multiple files into a single dataset](https://docs.pola.rs/user-guide/io/multiple/#reading-into-a-single-dataframe).
-
-```python
-import polars as pl
-
-lf = pl.scan_parquet(
-    "s3://[hub-bucket-name]/model-output/[modeling team name]/*.parquet",
-    storage_options={"skip_signature": "true"}
-)
-```
-
-#### Using partitions (hive-style)
-
-If your data uses hive-style partitioning, Polars can use the partitions to filter the data before reading it.
-
-```python
-from datetime import datetime
-import polars as pl
-
-oracle_data = pl.scan_parquet(
-    "s3://[hub-bucket-name]/target-data/oracle-output/",
-    hive_partitioning=True,
-    storage_options={"skip_signature": "true"}) \
-.filter(pl.col("nowcast_date") == datetime(2025, 2, 5)) \
-.collect()
-```
-
-- [Full documentation of the Polars Python API](https://docs.pola.rs/api/python/stable/reference/)
+Please see the [hub-data package documentation](https://hubverse-org.github.io/hub-data) for examples of how to use the CLI, and the `hubdata.connect_hub()` and `hubdata.create_hub_schema()` functions.
 
 </details>
 
