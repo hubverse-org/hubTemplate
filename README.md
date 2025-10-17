@@ -5,6 +5,8 @@
 >
 > - [FluSight Forecast Hub](https://github.com/cdcepi/FluSight-forecast-hub/blob/main/README.md)
 > - [US SARS-CoV-2 Variant Nowcast Hub](https://github.com/reichlab/variant-nowcast-hub)
+> 
+> You may also want to add a target-data.json file if your hub contains either [time-series or oracle-output target data](https://docs.hubverse.io/en/latest/user-guide/target-data.html). 
 
 # *[Insert title of hub]*
 
