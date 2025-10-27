@@ -197,7 +197,7 @@ aws s3 cp s3://[hub-bucket-name]/target-data/ . --recursive --no-sign-request
 Download the model-output files for a specific team:
 
 ```sh
-aws s3 cp s3://[hub-bucket-name]/[modeling-team-name]/UMass-flusion/ . --recursive --no-sign-request
+aws s3 cp s3://[hub-bucket-name]/model-output/[modeling-team-name]/ . --recursive --no-sign-request
 ```
 
 - [Full documentation for `aws s3 ls`](https://docs.aws.amazon.com/cli/latest/reference/s3/ls.html)
