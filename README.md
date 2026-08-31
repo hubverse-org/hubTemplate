@@ -42,7 +42,16 @@ There are standard software packages to convert from dates to epidemic weeks and
 [lubridate](https://lubridate.tidyverse.org/reference/week.html) for R and [pymmwr](https://pypi.org/project/pymmwr/)
 and [epiweeks](https://pypi.org/project/epiweeks/) for Python).
 
-If you have questions aboutthis target, please reach out to *[insert name]* (*[insert email]*).
+If you have questions about this target, please reach out to *[insert name]* (*[insert email]*).
+
+## ⚠️ A note on retrospective forecasting and evaluation
+
+The forecasts in this hub were produced with the data available at the time they were made. Surveillance data is frequently **revised** afterward, so the data version you use matters — generating forecasts from the latest data and then evaluating against it can make retrospective performance look substantially better than it really was:
+
+- To **re-generate** forecasts retrospectively, restrict each forecast's inputs to the version of the target data available **as of** its reference date. Using the current data lets models "see" information the original forecasters did not.
+- To **score** forecasts, use the finalized target version defined for this hub (e.g. end-of-season data, or data given a fixed time to stabilize) — *[hub maintainers: state or link your hub's target definition here]*.
+
+To get the data as it was on a past date, reconstruct it from this hub's versioned target data / git history where available, or use an external archive such as [Delphi's Epidata API](https://delphi.cmu.edu/epidata/v5/docs) via the [epidatr](https://cmu-delphi.github.io/epidatr/) (R) and [epidatpy](https://cmu-delphi.github.io/epidatpy/) (Python) clients. See the [hubverse guidance on data revisions and retrospective evaluation](https://docs.hubverse.io/en/latest/user-guide/target-data.html#data-revisions-warning) for more.
 
 ## Accessing hub data on the cloud
 
